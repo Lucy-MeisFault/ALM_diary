@@ -1,0 +1,21 @@
+body{
+    font-family: "Coupier New", serif;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    margin: 0;
+}
+main{
+    margin: 30px auto;
+    padding: 24px;
+    max-width: 900px;
+}
+header,article{
+    background-color: white;
+    padding: 20px;
+    margin: 16px;
+    border-radius: 10px;
+    border: tan 2px;
+}
+h1, h2{
+    color: black;
+}
