@@ -1,17 +1,19 @@
-
 <?php
-require_once 'index.php';
 require_once 'Day.php';
 require_once 'Note.php';
-
+require_once 'Listie.php';
+require_once 'DayList.php';
 
 if (isset($_POST['saveButton'])) {
 
-    $days = $_SESSION['days'];
-    $temp = [];
-    foreach ($days as $day) {
-        $temp[] = $day->jsonSerialize();
-    }
+session_start();
+    $days = $_SESSION['linkedList'];
+    $temp = new Listie();
+    $days->goToFirst();
+for ($i = 0; $i < $days->count; $i++) {
+$temp->add($days->currentDay);
+$days->goToNext();
+}
 
 
     header("Content-Type: application/json");
