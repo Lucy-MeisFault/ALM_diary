@@ -1,8 +1,8 @@
 <?php
 require_once 'Listie.php';
-class Day implements JsonSerializable //todo put these mfs in a fucking list istg echo date('d.m.Y');
+class Day implements JsonSerializable
 {
-    public DateTime $date; //d.m.Y year
+    public DateTime $date; //d.m.Y
     public ?Day $previousDay;
     public ?Day $nextDay;
     public Listie $listOfNotes;

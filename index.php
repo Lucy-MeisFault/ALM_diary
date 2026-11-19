@@ -19,6 +19,7 @@ if (!isset($_SESSION['linkedList']))
     $_SESSION['linkedList']->add(New Day($temp));
 }
 if (isset($_POST['destroysessButton'])) {
+    $_SESSION = array();
     session_destroy();
 }
 if (isset($_POST['previousButton'])) {
@@ -91,7 +92,7 @@ if (!$_SESSION['linkedList']->currentDay->listOfNotes->count == 0) {
             </article>
 
             <?php }} ?>
-    <form id="login" action="Notes.php" method="post">
+    <form action="Notes.php" method="post">
         <fieldset>
             <legend>New note</legend>
             <label for="date">Date</label>
@@ -105,7 +106,7 @@ if (!$_SESSION['linkedList']->currentDay->listOfNotes->count == 0) {
             <textarea id="content" name="content" rows="5" cols="40" maxlength="1000"></textarea>
             <br>
             <label for="Add note">Add note</label>
-            <input type="submit" name="addNoteButton">
+            <input id="Add note" type="submit" name="addNoteButton">
         </fieldset>
     </form>
 </main>

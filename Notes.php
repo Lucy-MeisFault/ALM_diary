@@ -13,8 +13,6 @@ if (isset($_POST['addNoteButton']) && isset($_SESSION['linkedList']))
     $content = $_POST["content"];
     $date = DateTime::createFromFormat('!Y-m-d', $_POST["date"]);
         $note = new Note($content, $header);
-        $current = $days->currentDay;
-        $wanted = $date->format('Y-m-d');
         $days->insertByDate(new Day($date))->listOfNotes->add($note);
 
 
